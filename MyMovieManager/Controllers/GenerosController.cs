@@ -30,10 +30,10 @@ namespace MyMovieManager.Controllers
         [HttpGet]
         public async Task<ActionResult> AddOrEdit(int id = 0)
         {
-            var genero = await context.Generos.FirstOrDefaultAsync(x=>x.Id == id);
-
             if (id == 0)
                 return View(new Genero());
+
+            var genero = await context.Generos.FirstOrDefaultAsync(x => x.Id == id);
 
             return View(genero);
         }

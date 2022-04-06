@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Actor>
+
+<div class="page">
+    <h1 class="page-header text-center">Listado de actores <i class="fas fa-user-circle"></i></h1>
+
+    <div class="breadcrumb">
+        <a onclick="showModal('@Url.Action("AddOrEdit","Actores",new { Id = 0 },Context.Request.Scheme)', 'Nuevo Actor')" class="btn btn-primary text-white">Agregar nuevo</a>
+    </div>
+
+    <div id="view-all">
+        @await Html.PartialAsync("_ViewAll", Model)
+    </div>
+
+    @section Scripts{
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
+
+</div>

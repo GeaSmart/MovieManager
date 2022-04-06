@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Actor>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th> @Html.DisplayNameFor(x => x.Nombres) </th>
+            <th> @Html.DisplayNameFor(x => x.Apellidos) </th>
+            <th> @Html.DisplayNameFor(x => x.Edad) </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td> @item.Nombres </td>
+            <td> @item.Apellidos </td>
+            <td> @item.Edad </td>
+            <td>xxx</td>
+        </tr>
+        }
+
+    </tbody>
+        
+</table>
