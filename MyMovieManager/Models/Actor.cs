@@ -26,5 +26,8 @@ namespace MyMovieManager.Models
 
         [Display(Name = "Edad del actor")]
         public int Edad { get; set; }
+
+        //Propiedades de navegación
+        public List<PeliculasActores> PeliculasActores { get; set; }
     }
 }
