@@ -12,16 +12,29 @@
             <input type="hidden" asp-for="Id" />
 
             <div class="form-group">
-                @Html.LabelFor(x => x.Nombres, null, new { @class = "control-label" })
-                @Html.TextBoxFor(x => x.Nombres, null, new { @class = "form-control" })
-                @Html.ValidationMessageFor(x => x.Nombres, null, new { @class = "text-danger" })
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(x => x.Apellidos, null, new { @class = "control-label" })
-                @Html.TextBoxFor(x => x.Apellidos, null, new { @class = "form-control" })
-                @Html.ValidationMessageFor(x => x.Apellidos, null, new { @class = "text-danger" })
-            </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        @Html.LabelFor(x => x.Nombres, null, new { @class = "control-label" })
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-font"></i></span>
+                            </div>
+                            @Html.TextBoxFor(x => x.Nombres, null, new { @class = "form-control" })
+                        </div>
+                        @Html.ValidationMessageFor(x => x.Nombres, null, new { @class = "text-danger" })
+                    </div>
+                    <div class="col-md-6">
+                        @Html.LabelFor(x => x.Apellidos, null, new { @class = "control-label" })
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-font"></i></span>
+                            </div>
+                            @Html.TextBoxFor(x => x.Apellidos, null, new { @class = "form-control" })
+                        </div>
+                        @Html.ValidationMessageFor(x => x.Apellidos, null, new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>                      
 
             <div class="form-group">
                 @Html.LabelFor(x => x.Edad, null, new { @class = "control-label" })
