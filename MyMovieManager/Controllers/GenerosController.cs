@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using static MyMovieManager.Helpers.MisGastos.Helpers.RenderRazor;
 
 namespace MyMovieManager.Controllers
 {
@@ -25,6 +26,7 @@ namespace MyMovieManager.Controllers
             return View(generos);
         }
 
+        [NoDirectAccess]
         [HttpGet]
         public async Task<ActionResult> AddOrEdit(int id = 0)
         {
