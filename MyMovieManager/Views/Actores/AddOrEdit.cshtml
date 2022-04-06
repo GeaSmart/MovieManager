@@ -6,7 +6,7 @@
 
 <div class="row">
     <div class="col-md-12">
-        <form asp-action="AddOrEdit" asp-route-id="@Model.Id" onsubmit="return xxx" autocomplete="off">
+        <form asp-action="AddOrEdit" asp-route-id="@Model.Id" onsubmit="return jQueryAjaxPost(this)" autocomplete="off">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
             <input type="hidden" asp-for="Id" />
@@ -38,7 +38,12 @@
 
             <div class="form-group">
                 @Html.LabelFor(x => x.Edad, null, new { @class = "control-label" })
-                @Html.TextBoxFor(x => x.Edad, null, new { @class = "form-control" })
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">#</span>
+                    </div>
+                    @Html.TextBoxFor(x => x.Edad, null, new { @class = "form-control" })
+                </div>
                 @Html.ValidationMessageFor(x => x.Edad, null, new { @class = "text-danger" })
             </div>
 
