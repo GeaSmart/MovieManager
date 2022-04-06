@@ -11,3 +11,58 @@
         }
     )
 }
+
+function jQueryAjaxPost(form) {
+    try {
+        $.ajax({
+            type: 'POST',
+            url: form.action,
+            data: new FormData(form),
+            contentType: false,
+            processData: false,
+            success: function (response) {
+                if (response.isValid) {
+                    $("#view-all").html(response.html);
+                    $("#form-modal .modal-body").html('');
+                    $("#form-modal .modal-title").html('');
+                    $("#form-modal").modal('hide');
+                }
+                else {
+                    $("#form-modal .modal-body").html(response.html);
+                }
+            },
+            error: function (error) {
+                console.log(error)
+            }
+        })
+    }
+    catch (e) {
+        console.log(e);
+    }
+    return false;
+}
+
+function jQueryAjaxDelete(form) {
+    if (confirm('¿Está seguro de eliminar el registro?')) {
+        try {
+            $.ajax({
+                type: 'DELETE',
+                url: form.action,
+                data: new FormData(form),
+                contentType: false,
+                processData: false,
+                success: function (response) {
+                    $("#view-all").html(response.html);
+                },
+                error: function (error) {
+                    console.log(error)
+                }
+            })
+        }
+        catch (ex) {
+            console.log(ex);
+        }
+        return false;
+    }
+    return false;
+}
