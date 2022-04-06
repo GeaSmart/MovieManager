@@ -1,0 +1,30 @@
+﻿@model Genero
+
+@{ 
+    Layout = null;
+}
+
+<div class="row">
+
+    <div class="col-md-12">
+        <form asp-action="AddOrEdit" asp-route-id="@Model.Id" onsubmit="return xxx" autocomplete="off">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            @Html.HiddenFor(x=>x.Id)
+
+            <div class="form-group">
+                @Html.LabelFor(x=>x.Nombre,null,new { @class = "control-label" })
+                @Html.TextBoxFor(x=>x.Nombre,null, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x=>x.Nombre,null,new { @class = "text-danger" })
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <input type="submit" value="Enviar" class="btn btn-primary btn-block" />
+                </div>
+            </div>
+
+        </form>
+    </div>       
+
+</div>

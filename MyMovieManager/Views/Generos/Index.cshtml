@@ -1,0 +1,19 @@
+﻿@model IEnumerable<Genero>
+
+<div class="page">
+
+    <h1 class="page-header text-center">Lista de géneros <i class="fas fa-compact-disc"></i></h1>
+
+    <div class="breadcrumb">
+        <a onclick="showModal('@Url.Action("AddOrEdit","Generos",new { Id = 0 },Context.Request.Scheme)', 'Nuevo Género')" class="btn btn-primary text-white">Agregar nuevo</a>
+    </div>
+
+    <div id="view-all">
+        @await Html.PartialAsync("_ViewAll",Model) 
+    </div>
+
+    @section Scripts{        
+            @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
+
+</div>

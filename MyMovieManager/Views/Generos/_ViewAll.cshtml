@@ -1,0 +1,21 @@
+﻿@model IEnumerable<Genero>
+
+<table class="table table-striped">
+
+    <thead>
+        <tr>
+            <th> @Html.DisplayNameFor(x=>x.Nombre) </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Nombre</td>
+                <td>...</td>
+            </tr>
+        }
+
+    </tbody>
+
+</table>
