@@ -1,0 +1,19 @@
+﻿@model IEnumerable<Pelicula>
+
+<div class="page">
+
+    <h1 class="jumbotron text-center">Listado de Películas <i class="fas fa-video"></i></h1>
+
+    <div class="breadcrumb">
+        <a href="#" class="btn btn-primary">Agregar nuevo</a>
+    </div>
+
+    <div id="view-all">
+        @await Html.PartialAsync("_ViewAll", Model)
+    </div>
+
+    @section Scripts{
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
+
+</div>
